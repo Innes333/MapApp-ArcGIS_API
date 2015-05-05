@@ -1,0 +1,208 @@
+@import "bourbon/bourbon"
+
+body
+	font-family: "Raleway", sans-serif
+	font-weight: normal
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+button
+	outline: none
+	background-color: transparent
+	border: none
+
+.hidden
+	display: none
+
+header
+	position: fixed
+	width: 100%
+	z-index: 50
+	.navbar-brand
+		float: right
+		margin-top: 10px
+		color: #fff
+		font-size: 15px
+		i
+			font-size: 25px
+			margin-left: 10px
+	.navbar
+		background-color: #333
+	.navbar-nav
+		margin: 0
+		padding: 0
+		ul,
+		li
+			display: inline-block
+			list-style: none
+		
+		li
+			a
+				color: #fff
+				display: inline-block
+				padding: 15px 40px
+				margin-left: -3px
+				+kerning(1)
+				
+			.active
+				position: relative
+				background-color: #3c3c3c
+				box-shadow: 0 0 2px #000
+				&:before
+					position: absolute
+					content: ''
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 10px 10px 0 10px
+					border-color: #3c3c3c transparent transparent transparent
+					bottom: -10px
+					left: 44%
+				&:hover
+					background-color: #3c3c3c
+					box-shadow: 0 0 2px #000
+
+html,
+body,
+section,
+#mapDiv
+	padding: 0
+	margin: 0
+	.esriSimpleSliderTL
+		top: 70px
+	#mapLegendDiv
+		min-height: 250px
+		max-height: 250px
+		margin-bottom: 20px
+	#mapLegendDiv
+		height: 250px
+		overflow: scroll
+		margin-bottom: 20px
+	#mapTitle
+		margin-left: 15px
+	#mapDiv_layer0
+		height: 900px
+	.esriSimpleSlider
+		background-color: rgba(51,51,51,.7)
+		.esriSimpleSliderVertical,
+		.esriSimpleSliderIncrementButton,
+		.esriSimpleSliderDecrementButton
+			&:hover
+				background-color: #333
+		span
+			color: #fff
+.wrap_map
+	position: relative
+	#basemapGallery
+		#galleryNode_basemap_8
+			display: none
+		#galleryNode_basemap_7
+			display: none
+		#galleryNode_basemap_5
+			display: none
+		#galleryNode_basemap_4
+			display: none
+		#galleryNode_basemap_3
+			display: none
+		#galleryNode_basemap_2
+			display: none
+		#galleryNode_basemap_1
+			display: none
+	.panel
+		position: absolute
+		bottom: 10px
+		left: 40px
+		z-index: 1
+		.esriBasemapGallerySelectedNode
+			.esriBasemapGalleryThumbnail
+				border: 2px solid #333
+#search
+	display: block
+	position: absolute
+	top: 70px
+	left: 74px
+	z-index: 2
+	
+	.searchInput
+		background-color: rgba(51,51,51,.6)
+		border: 1px solid #ccc
+		border-right: none
+	.searchGroup,
+	.searchInput
+		color: #fff
+	.searchBtn
+		background-color: rgba(51,51,51,.9)
+		border: 1px solid #ccc
+		span,
+		.searchGroup
+			color: #fff
+	.searchClear
+		background-color: rgba(51,51,51,.4)
+#about
+	padding: 10px
+	min-height: 700px
+	color: #555
+	h2
+		text-align: center
+		font-size: 25px
+		margin-top: 40px
+		margin-bottom: 40px
+		i
+			margin-left: 10px
+	p
+		text-indent: 1.8em
+		text-align: justify
+	img
+		display: inline-block
+		float: left
+
+#contact
+	padding: 10px
+	min-height: 700px
+	color: #555
+	h2
+		text-align: center
+		font-size: 25px
+		margin-top: 40px
+		margin-bottom: 40px
+		i
+			margin-left: 10px
+	h3
+		margin-top: 20px
+		margin-bottom: 5px
+		i
+			margin-right: 10px
+	p
+		font-size: 17px
+	input
+		width: 100%
+		margin-top: 7px
+		margin-bottom: 20px
+		text-indent: 5px
+	textarea
+		width: 100%
+		height: 70px
+		margin-top: 7px
+		margin-bottom: 20px
+	button
+		display: block
+		margin: 0 auto
+		padding: 10px 20px
+		background-color: rgba(51,51,51,.8)
+		color: #fff
+		&:hover
+			background-color: #333
+.main_footer
+	min-height: 70px
+	background-color: #333
+	.copy
+		color: #fff
+		font-size: 15px
+		margin-top: 10px
+

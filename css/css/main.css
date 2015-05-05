@@ -1,0 +1,29 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialised; }
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: red; }
+
+body input:required:valid,
+body textarea:required:valid {
+  color: green; }
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none; }
+
+.hidden {
+  display: none; }
+
+body #mapDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%; }

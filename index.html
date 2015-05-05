@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>My first Map Application</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="img/favicon.png" />
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid.min.css" />
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/media.css" />
+	<link rel="stylesheet" href="http://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+   <link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
+	
+</head>
+<body>
+
+
+	<header>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#"> Web Maps  <i class="fa fa-map-marker"></i></a>
+
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li ><a class="active" href="#">Главная</a></li>
+						<li><a href="#about">О компании</a></li>
+						<li><a href="#contact">Контакты</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</header>
+
+
+	<section id="home" class="wrap_map">
+		<div class="panel panel-primary panel-fixed">
+			<div class="panel-body">
+				<div id="basemapGallery"></div>
+			</div>
+		</div>
+			<div id="search"></div>
+			<div id="mapDiv"></div>
+	</section>
+
+	<section id="about"> 
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Web Maps  <i class="fa fa-map-marker"></i></h2>
+					<img src="img/layers.png" alt="layers_gis">
+					<p>
+						Геоинформационная система (географическая информационная система, ГИС) — система сбора, хранения, анализа и графической визуализации пространственных[1] (географических) данных и связанной с ними информации о необходимых объектах.
+
+						Понятие геоинформационной системы также используется в более узком смысле — как инструмента (программного продукта), позволяющего пользователям искать, анализировать и редактировать как цифровую карту местности, так и дополнительную информацию об объектах[2].
+					</p>
+					<p>
+
+						Редактирование слоя в системе gvSIG 
+						Геоинформационная система может включать в свой состав пространственные базы данных (в том числе, под управлением универсальных СУБД), редакторы растровой и векторной графики, различные средства пространственного анализа данных. Применяются в картографии, геологии, метеорологии, землеустройстве, экологии, муниципальном управлении, транспорте, экономике, обороне и многих других областях. Научные, технические, технологические и прикладные аспекты проектирования, создания и использования геоинформационных систем изучаются геоинформатикой.
+					</p>
+					<p>
+						Данные в геоинформационных системах описывают, как правило, реальные объекты, такие как дороги, здания, водоемы, лесные массивы. Реальные объекты можно разделить на две абстрактные категории: дискретные (дома, территориальные зоны) и непрерывные (рельеф, уровень осадков, среднегодовая температура). Для представления этих двух категорий объектов используются векторные и растровые данные.
+
+						Растровые данные хранятся в виде наборов величин, упорядоченных в форме прямоугольной сетки. Ячейки этой сетки называются пикселями. Наиболее распространенным способом получения растровых данных о поверхности Земли является дистанционное зондирование, проводимое при помощи спутников. Хранение растровых данных может осуществляться в графических форматах, например TIFF или JPEG.
+
+						Векторные данные обычно имеют намного меньший размер, чем растровые. Их легко трансформировать и проводить над ними бинарные операции. Векторные данные позволяют проводить различные типы пространственного анализа, к примеру поиск кратчайшего пути в дорожной сети. Наиболее распространёнными типами векторных объектов являются точки, полилинии, многоугольники.
+
+						Точки используются для обозначения географических объектов, для которых важно местоположение, а не их форма или размеры. Возможность обозначения объекта точкой зависит от масштаба карты. В то время как на карте мира города целесообразно обозначать точечными объектами, то на карте города сам город представляется в виде множества объектов. В ГИС точечный объект изображается в виде некоторой геометрической фигуры небольших размеров (квадратик, кружок, крестик), либо пиктограммой, передающей тип реального объекта.
+
+						Полилинии служат для изображения линейных объектов. Полилиния — ломаная линия, составленная из отрезков прямых. Полилиниями изображаются дороги, железнодорожные пути, реки, улицы, водопровод. Допустимость изображения объектов полилиниями также зависит от масштаба карты. Например, крупная река в масштабах континента вполне может изображаться линейным объектом, тогда как уже в масштабах города требуется её изображение площадным объектом. Характеристикой линейного объекта является длина.
+
+						Многоугольники (иногда используется калька «полигоны») служат для обозначения площадных объектов с чёткими границами. Примерами могут служить озера, парки, здания, страны, континенты. Характеризуются площадью и длиной периметра.
+
+						Семантические данные могут быть привязаны к векторным: например, на карте территориального зонирования к площадным объектам, представляющим зоны, может быть привязана характеристика типа зоны. Структуру и типы данных определяет пользователь. На основе численных значений, присвоенных векторным объектам на карте, может строиться тематическая карта, на которой эти значения обозначены цветами в соответствии с цветовой шкалой, либо окружностями разного размера. Непрерывные поля величин могут быть описаны векторными данными. Поля при этом изображаются в виде изолиний или контурных линий. Одним из способов представления рельефа является нерегулярная триангуляционная сетка (TIN, triangulated irregular networks). Такая сетка формируется множеством точек с привязанными значениями (в данном случае высота). Значения в произвольной точке внутри сетки получаются путем интерполяции значений в узлах треугольника, в который попадает эта точка.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+<hr>
+<section id="contact" class="s_contact">
+	<div class="section_content">
+		<div class="container">
+			<div class="row">
+				<h2>Контакты</h2>
+				<div class="col-md-6">
+					<div class="contact_box">
+						<h3><i class="fa fa-home"></i>Адрес:</h3>
+						<p>Украина, г.Киев, ул.Крещатик, 1 </p>
+									
+						<h3><i class="fa fa-phone"></i>Телефон:</h3>
+						<p>+3-098-7627127</p>
+				
+					
+						<h3><i class="fa fa-envelope"></i>Email:</h3>
+						<p><a href="#" target="_blank">web_maps@gmail.com</a></p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<form action="http://formspree.io/k_45@ukr.net" method="POST" class="main_form" novalidate target="_blank">
+						<label class="form-group">
+							<span class="color_element">*</span>Ваше имя:
+							<input type="text" name="name" placeholder=" Your name"  data-validation-required-message="You didnt write your name" required/>
+							<span class="help-block text-danger"></span>
+						</label>
+
+						<label class="form-group">
+							<span class="color_element">*</span>E-mail:
+							<input type="text" name="email" placeholder=" Your email"   data-validation-email-message="Your email not correct" required/>
+							<span class="help-block text-danger"></span>
+						</label>
+						<label class="form-group">
+							<span class="color_element">*</span>Ваше сообщение:
+							<textarea name="message" placeholder=" Your message"  data-validation-required-message="You didnt write message"></textarea>
+							<span class="help-block text-danger"></span>
+						</label>
+						<button>Отправить</button>
+					</form>
+				</div>
+		</div>
+	</div>
+	</div>
+	
+</section>
+
+<footer class="main_footer"> 
+<div class="container">
+	<div class="row ">
+		<div class="col-md-12">
+			<div class="copy">&#169; 2015  Inna Ivaschuk</div>
+		</div>
+	</div>
+</div>
+</footer>
+ 		<!--[if lt IE 9]>
+ 		<script src="libs/html5shiv/es5-shim.min.js"></script>
+ 		<script src="libs/html5shiv/html5shiv.min.js"></script>
+ 		<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+ 		<script src="libs/respond/respond.min.js"></script>
+ 		<![endif]-->
+ 		<script src="libs/jquery/jquery-2.1.3.min.js"></script>
+ 		<script src="libs/animate/animate-css.js"></script>
+ 		<script src="http://js.arcgis.com/3.13/"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ 		<script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
+ 		<script src="libs/scroll2id/PageScroll2id.min.js"></script>
+ 		<script src="js/common.js"></script>
+ 		
+ 		<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+ 		<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+ 	</body>
+ 	</html>

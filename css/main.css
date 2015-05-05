@@ -1,0 +1,229 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialised; }
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none; }
+
+.hidden {
+  display: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 50; }
+  header .navbar-brand {
+    float: right;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 15px; }
+    header .navbar-brand i {
+      font-size: 25px;
+      margin-left: 10px; }
+  header .navbar {
+    background-color: #333; }
+  header .navbar-nav {
+    margin: 0;
+    padding: 0; }
+    header .navbar-nav ul,
+    header .navbar-nav li {
+      display: inline-block;
+      list-style: none; }
+    header .navbar-nav li a {
+      color: #fff;
+      display: inline-block;
+      padding: 15px 40px;
+      margin-left: -3px;
+      letter-spacing: 1px; }
+    header .navbar-nav li .active {
+      position: relative;
+      background-color: #3c3c3c;
+      box-shadow: 0 0 2px #000; }
+      header .navbar-nav li .active:before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 0 10px;
+        border-color: #3c3c3c transparent transparent transparent;
+        bottom: -10px;
+        left: 44%; }
+      header .navbar-nav li .active:hover {
+        background-color: #3c3c3c;
+        box-shadow: 0 0 2px #000; }
+
+html,
+body,
+section,
+#mapDiv {
+  padding: 0;
+  margin: 0; }
+  html .esriSimpleSliderTL,
+  body .esriSimpleSliderTL,
+  section .esriSimpleSliderTL,
+  #mapDiv .esriSimpleSliderTL {
+    top: 70px; }
+  html #mapLegendDiv,
+  body #mapLegendDiv,
+  section #mapLegendDiv,
+  #mapDiv #mapLegendDiv {
+    min-height: 250px;
+    max-height: 250px;
+    margin-bottom: 20px; }
+  html #mapLegendDiv,
+  body #mapLegendDiv,
+  section #mapLegendDiv,
+  #mapDiv #mapLegendDiv {
+    height: 250px;
+    overflow: scroll;
+    margin-bottom: 20px; }
+  html #mapTitle,
+  body #mapTitle,
+  section #mapTitle,
+  #mapDiv #mapTitle {
+    margin-left: 15px; }
+  html #mapDiv_layer0,
+  body #mapDiv_layer0,
+  section #mapDiv_layer0,
+  #mapDiv #mapDiv_layer0 {
+    height: 900px; }
+  html .esriSimpleSlider,
+  body .esriSimpleSlider,
+  section .esriSimpleSlider,
+  #mapDiv .esriSimpleSlider {
+    background-color: rgba(51, 51, 51, 0.7); }
+    html .esriSimpleSlider .esriSimpleSliderVertical:hover,
+    html .esriSimpleSlider .esriSimpleSliderIncrementButton:hover,
+    html .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+    body .esriSimpleSlider .esriSimpleSliderVertical:hover,
+    body .esriSimpleSlider .esriSimpleSliderIncrementButton:hover,
+    body .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+    section .esriSimpleSlider .esriSimpleSliderVertical:hover,
+    section .esriSimpleSlider .esriSimpleSliderIncrementButton:hover,
+    section .esriSimpleSlider .esriSimpleSliderDecrementButton:hover,
+    #mapDiv .esriSimpleSlider .esriSimpleSliderVertical:hover,
+    #mapDiv .esriSimpleSlider .esriSimpleSliderIncrementButton:hover,
+    #mapDiv .esriSimpleSlider .esriSimpleSliderDecrementButton:hover {
+      background-color: #333; }
+    html .esriSimpleSlider span,
+    body .esriSimpleSlider span,
+    section .esriSimpleSlider span,
+    #mapDiv .esriSimpleSlider span {
+      color: #fff; }
+
+.wrap_map {
+  position: relative; }
+  .wrap_map #basemapGallery #galleryNode_basemap_8 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_7 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_5 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_4 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_3 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_2 {
+    display: none; }
+  .wrap_map #basemapGallery #galleryNode_basemap_1 {
+    display: none; }
+  .wrap_map .panel {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    z-index: 1; }
+    .wrap_map .panel .esriBasemapGallerySelectedNode .esriBasemapGalleryThumbnail {
+      border: 2px solid #333; }
+
+#search {
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 74px;
+  z-index: 2; }
+  #search .searchInput {
+    background-color: rgba(51, 51, 51, 0.6);
+    border: 1px solid #ccc;
+    border-right: none; }
+  #search .searchGroup,
+  #search .searchInput {
+    color: #fff; }
+  #search .searchBtn {
+    background-color: rgba(51, 51, 51, 0.9);
+    border: 1px solid #ccc; }
+    #search .searchBtn span,
+    #search .searchBtn .searchGroup {
+      color: #fff; }
+  #search .searchClear {
+    background-color: rgba(51, 51, 51, 0.4); }
+
+#about {
+  padding: 10px;
+  min-height: 700px;
+  color: #555; }
+  #about h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    #about h2 i {
+      margin-left: 10px; }
+  #about p {
+    text-indent: 1.8em;
+    text-align: justify; }
+  #about img {
+    display: inline-block;
+    float: left; }
+
+#contact {
+  padding: 10px;
+  min-height: 700px;
+  color: #555; }
+  #contact h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    #contact h2 i {
+      margin-left: 10px; }
+  #contact h3 {
+    margin-top: 20px;
+    margin-bottom: 5px; }
+    #contact h3 i {
+      margin-right: 10px; }
+  #contact p {
+    font-size: 17px; }
+  #contact input {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 20px;
+    text-indent: 5px; }
+  #contact textarea {
+    width: 100%;
+    height: 70px;
+    margin-top: 7px;
+    margin-bottom: 20px; }
+  #contact button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff; }
+    #contact button:hover {
+      background-color: #333; }
+
+.main_footer {
+  min-height: 70px;
+  background-color: #333; }
+  .main_footer .copy {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 10px; }
